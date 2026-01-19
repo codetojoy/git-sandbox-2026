@@ -7,6 +7,6 @@ public class Runner {
     private static final Logger log = LoggerFactory.getLogger(Runner.class);
 
     public static void main(String[] args) {
-        log.info("TRACER debug hello, world!");
+        log.info("TRACER tmp-experiment");
     }
 }
