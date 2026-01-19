@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'net.codetojoy'
+version = '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    runtimeOnly 'org.slf4j:slf4j-simple:2.0.9'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        // Set options for log level LIFECYCLE events
+        events "failed", "passed", "skipped", "standardOut", "standardError"
+        exceptionFormat "full" // Shows full stack traces and messages
+        showExceptions true
+        showCauses true
+        showStackTraces true
+    }
+}
+
+application {
+    mainClass = 'net.codetojoy.Runner'
+}
